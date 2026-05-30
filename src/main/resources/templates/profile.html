@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Profile</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h2>User Profile</h2>
+
+            <p>
+                User Name :
+                <span th:text="${user.userName}"></span>
+            </p>
+
+            <p>
+                Email :
+                <span th:text="${user.email}"></span>
+            </p>
+
+            <p>
+                Role :
+                <span th:text="${user.role}"></span>
+            </p>
+
+            <br>
+
+            <a th:href="@{/edit/{id}(id=${user.id})}">
+                Edit Profile
+            </a>
+
+            <br>
+            <br>
+
+            <a th:href="@{/delete/{id}(id=${user.id})}">
+                Delete Profile
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

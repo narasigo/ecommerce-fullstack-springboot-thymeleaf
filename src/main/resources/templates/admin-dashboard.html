@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+	<title>Admin Dashboard</title>
+
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+	<div class="navbar">
+
+		<div>
+
+			<h2>E-Commerce Admin Panel</h2>
+
+		</div>
+		<div>
+
+			<a href="/logout">
+				Logout
+			</a>
+
+		</div>
+	</div>
+	<div class="dashboard-container">
+		<div class="sidebar">
+			<h3>Admin Menu</h3>
+			<a href="/admin/dashboard">
+				Dashboard
+			</a>
+			<a href="/admin/addUser">
+				Add User
+			</a>
+			<a href="/admin/viewUsers">
+				View Users
+			</a>
+			<a href="/admin/addProduct">
+				Add Product
+			</a>
+
+			<a href="/admin/viewProducts">
+				View Products
+			</a>
+		</div>
+		<div class="dashboard-content">
+			<h1>Welcome Admin</h1>
+			<p>
+				Manage Users and Products
+			</p>
+			<div class="card-container">
+				<div class="dashboard-card">
+					<h2>User Management</h2>
+
+					<p>
+						Add, Update, Delete Users
+					</p>
+
+					<a href="/admin/viewUsers">
+
+						Manage Users
+
+					</a>
+
+				</div>
+				<div class="dashboard-card">
+
+					<h2>Product Management</h2>
+
+					<p>
+						Add, Update, Delete Products
+					</p>
+
+					<a href="/admin/viewProducts">
+
+						Manage Products
+
+					</a>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+</body>
+
+</html>

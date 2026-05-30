@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+	<title>Update Product</title>
+
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+
+	<div class="form-container">
+
+		<h2>Update Product</h2>
+
+		<form action="/product/update" method="post">
+
+			<!-- Hidden Product ID -->
+
+			<input type="hidden" name="id" th:value="${product.id}">
+
+			<!-- Product Name -->
+
+			<label>Product Name</label>
+
+			<input type="text" name="productName" th:value="${product.productName}" required>
+
+			<br><br>
+
+			<!-- Description -->
+
+			<label>Description</label>
+
+			<textarea name="description" required th:text="${product.description}">
+        </textarea>
+
+			<br><br>
+
+			<!-- Price -->
+
+			<label>Price</label>
+
+			<input type="number" step="0.01" name="price" th:value="${product.price}" required>
+
+			<br><br>
+
+			<!-- Category -->
+
+			<label>Category</label>
+
+			<input type="text" name="category" th:value="${product.category}" required>
+
+			<br><br>
+
+			<!-- Existing Image Name -->
+
+			<input type="hidden" name="imageName" th:value="${product.imageName}">
+
+			<button type="submit">
+
+				Update Product
+
+			</button>
+
+		</form>
+
+	</div>
+
+</body>
+
+</html>

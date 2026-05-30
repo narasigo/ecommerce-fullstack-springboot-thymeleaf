@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Add Product</title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+
+<div class="form-container">
+
+    <h2>Add Product</h2>
+
+    <form action="/product/saveproducts"
+          method="post"
+
+          enctype="multipart/form-data">
+
+        <input type="text"
+               name="productName"
+               placeholder="Product Name"
+               required>
+
+        <input type="number"
+               name="price"
+               placeholder="Price"
+               required>
+
+        <input type="text"
+               name="category"
+               placeholder="Category"
+               required>
+
+        <textarea name="description"
+                  placeholder="Description">
+        </textarea>
+
+        <input type="file"
+               name="imageFile"
+               required>
+
+        <button type="submit">
+
+            Save Product
+
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

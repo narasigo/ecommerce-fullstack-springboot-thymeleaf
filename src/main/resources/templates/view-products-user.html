@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>User Products</title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Available Products</h2>
+
+    <table>
+
+        <thead>
+
+        <tr>
+
+            <th>ID</th>
+
+            <th>Image</th>
+
+            <th>Product Name</th>
+
+            <th>Description</th>
+
+            <th>Price</th>
+
+            <th>Category</th>
+
+            <th>Order</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr th:each="product : ${products}">
+
+            <td th:text="${product.id}"></td>
+
+            <td>
+
+                <img th:src="@{'/uploads/products/' + ${product.imageName}}"class="product-image">
+
+            </td>
+
+            <td th:text="${product.productName}"></td>
+
+            <td th:text="${product.description}"></td>
+
+            <td th:text="${product.price}"></td>
+
+            <td th:text="${product.category}"></td>
+
+            <td>
+
+                <form action="/user/placeOrder"
+                      method="post">
+
+                    <input type="hidden"
+                           name="productName"
+                           th:value="${product.productName}">
+
+                    <input type="hidden"
+                           name="price"
+                           th:value="${product.price}">
+
+                    <input type="number"
+                           name="quantity"
+                           min="1"
+                           placeholder="Qty"
+                           required>
+
+                    <button type="submit">
+
+                        Order
+
+                    </button>
+
+                </form>
+
+            </td>
+
+        </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</body>
+</html>

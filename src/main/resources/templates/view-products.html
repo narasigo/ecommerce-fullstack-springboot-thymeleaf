@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>View Products</title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>All Products</h2>
+
+    <table>
+
+        <thead>
+
+        <tr>
+
+            <th>ID</th>
+
+            <th>Image</th>
+
+            <th>Name</th>
+
+            <th>Price</th>
+
+            <th>Category</th>
+
+            <th>Actions</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <!-- Product Loop -->
+
+        <tr th:each="product : ${products}">
+
+            <td th:text="${product.id}"></td>
+
+            <td>
+
+				<img th:src="@{'/uploads/products/' + ${product.imageName}}"
+				     width="80">
+            </td>
+
+            <td th:text="${product.productName}"></td>
+
+            <td th:text="${product.price}"></td>
+
+            <td th:text="${product.category}"></td>
+
+            <td>
+
+                <a th:href="@{/product/edit/{id}(id=${product.id})}">
+                    Edit
+                </a>
+
+                |
+
+                <a th:href="@{/product/delete/{id}(id=${product.id})}">
+                    Delete
+                </a>
+
+            </td>
+
+        </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</body>
+</html>
